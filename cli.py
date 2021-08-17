@@ -17,32 +17,31 @@ def imgMerge(images):
 
 	return new_im
 
-
-def page(im, x=1):
-	qns = work(im)
+def cli(qns, x=1):
 	i = x
 	merge = False
 	to_merge = []
 	for qn in qns:
 		plt.imshow(qn)
-		plt.show()
+		plt.waitforbuttonpress(0)
+		plt.close()
 
 		if merge:
 			print("merging", len(to_merge))
-		t = int(input("Command? "))
+		t = int(input("Command: "))
 		if t == 0:
 			if merge:
 				new = imgMerge(to_merge)
-				new.save(f"cut/s {i}.png", "PNG")
+				new.save(f"cut/{i}.png", "PNG")
 				to_merge = []
 				merge = False
 				i += 1
 		elif t == 1:
 			if not merge:
-				qn.save(f"cut/s {i}.png", "PNG")
+				qn.save(f"cut/{i}.png", "PNG")
 			else:
 				new = imgMerge(to_merge)
-				new.save(f"cut/s {i}.png", "PNG")
+				new.save(f"cut/{i}.png", "PNG")
 				to_merge = []
 				merge = False
 			i += 1
@@ -54,7 +53,9 @@ def page(im, x=1):
 
 
 
-sample = img.open(f"sample.png", "r")
-sample2 = img.open(f"sample2.png", "r")
+# sample = img.open(f"sample.png", "r")
+# sample2 = img.open(f"sample2.png", "r")
 
-page(sample2)
+# qn2 = work(sample2)
+
+# cli(qn2)

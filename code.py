@@ -1,22 +1,18 @@
 from PIL import Image as img
 import matplotlib.pyplot as plt
 from functions import work
+from cli import cli
+from pdf2image import convert_from_path
 
-sample = img.open(f"sample.png", "r")
-w, h = sample.size
+pages = convert_from_path("file.pdf", 200)
+sample = pages[0]
 
-print(w, h)
+# sample = img.open(f"sample.png", "r")
 
-pix = sample.load()
+k = work(pages[0]) + work(pages[1]) + work(pages[2]) 
 
-k = work(sample)
-print(k)
+cli(k)
 
-plt.imshow(k[0])
-plt.show()
-
-plt.imshow(k[1])
-plt.show()
 
 
 
