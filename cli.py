@@ -1,5 +1,8 @@
 from PIL import Image as img
 import matplotlib.pyplot as plt
+from PIL import Image as img
+from PIL import ImageTk
+from display import *
 from functions import work
 
 def imgMerge(images):
@@ -17,25 +20,41 @@ def imgMerge(images):
 
 	return new_im
 
-def cli(qns, x=1):
+def cli(qns, x, master, var):
 	i = x
-	merge = False
+	merge= False
 	to_merge = []
-	for qn in qns:
-		plt.imshow(qn)
-		plt.waitforbuttonpress(0)
-		plt.close()
+	for _q in range(len(qns)):
+		t = -1
+
+		qcurr = qns[_q]
+		qn = qns[_q]
+		qcurr = qcurr.resize((floor(qcurr.size[0]/2), floor(qcurr.size[1]/2)))
+		qcurr = ImageTk.PhotoImage(qcurr)
+
+		qnext = None
+		if _q < len(qns)-1:
+			qnext = qns[_q+1]
+			qnext = qnext.resize((floor(qnext.size[0]/2), floor(qnext.size[1]/2)))
+			qnext = ImageTk.PhotoImage(qnext)
 
 		if merge:
 			print("merging", len(to_merge))
-		t = int(input("Command: "))
-		if t == 0:
-			if merge:
-				new = imgMerge(to_merge)
-				new.save(f"cut/{i}.png", "PNG")
-				to_merge = []
-				merge = False
-				i += 1
+
+
+		# tkinter window
+		buttons(master, var, qcurr, qnext)
+
+		# if any button pressed, stop window and move to next part of code
+
+		t = var.get()
+		#print("t", t)
+		
+		if t == -1:
+			print("gone")
+			return
+		elif t == 0:
+			pass
 		elif t == 1:
 			if not merge:
 				qn.save(f"cut/{i}.png", "PNG")
@@ -51,11 +70,30 @@ def cli(qns, x=1):
 				print(f"Merge started at q{i}")
 			to_merge.append(qn)
 
+		elif t == 3:
+			para = True
+			if not merge:
+				merge = True
+				print(f"Para merging")
+			to_merge.append(qn)
+			i += 1
+		elif t == 4:
+			if merge:
+				new = imgMerge(to_merge)
+				new.save(f"cut/{i}.png", "PNG")
+				to_merge = []
+				merge = False
+				i += 1
+
+	master.destroy()
 
 
-# sample = img.open(f"sample.png", "r")
-# sample2 = img.open(f"sample2.png", "r")
 
-# qn2 = work(sample2)
+master = Tk()
+var = IntVar()
 
-# cli(qn2)
+im = img.open("sample2.png")
+r = work(im)
+
+cli(r, 1, master, var)
+
