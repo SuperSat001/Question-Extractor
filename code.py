@@ -8,40 +8,28 @@ from tkinter import *
 from tkinter.ttk import *
 from math import floor
 
-# pages = convert_from_path("file.pdf", 200)
-# #sample = pages[0]
 
-# # sample = img.open(f"sample.png", "r")
+def pdfs(name):
+	pages = convert_from_path(name, 200)
+	k = []
+	for _p in pages:
+		k += work(_p)
+	return k
 
-# k = []
-# for _p in pages:
-# 	k += work(_p)
+def pics(name):
+	im = img.open(name)
+	return work(im)
 
-# im = img.open("sample2.png")
-# # r = work(im)
-
-# cli(k, 10)
 
 master = Tk()
+master.title("Question Extractor")
+
 var = IntVar()
 
-l = Label(master, text="Test")
-l.grid(row=5, column=0)
+#r = pics("sample2.png")
+r = pdfs("file.pdf")
 
-from display import gen
-
-sample = img.open("0-3.png")
-sample = sample.resize((floor(sample.size[0]/2), floor(sample.size[1]/2)))
-simg1 = ImageTk.PhotoImage(sample)
-
-sample = img.open("0-4.png")
-sample = sample.resize((floor(sample.size[0]/2), floor(sample.size[1]/2)))
-simg2 = ImageTk.PhotoImage(sample)
-
-
-gen(master, var, simg1, simg2)
-
-mainloop()
+cli(r, 1, master, var)
 
 
 

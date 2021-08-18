@@ -22,7 +22,7 @@ def imgMerge(images):
 
 def cli(qns, x, master, var):
 	i = x
-	merge= False
+	merge = False
 	to_merge = []
 	for _q in range(len(qns)):
 		t = -1
@@ -38,23 +38,25 @@ def cli(qns, x, master, var):
 			qnext = qnext.resize((floor(qnext.size[0]/2), floor(qnext.size[1]/2)))
 			qnext = ImageTk.PhotoImage(qnext)
 
+		qmerge = None
 		if merge:
-			print("merging", len(to_merge))
+			qmerge = imgMerge(to_merge)
+			qmerge = qmerge.resize((floor(qmerge.size[0]/2), floor(qmerge.size[1]/2)))
+			qmerge = ImageTk.PhotoImage(qmerge)
+			#print("merging", len(to_merge))
 
 
 		# tkinter window
-		buttons(master, var, qcurr, qnext)
+		buttons(master, var, merge, qmerge, qcurr, qnext)
 
 		# if any button pressed, stop window and move to next part of code
 
 		t = var.get()
 		#print("t", t)
-		
-		if t == -1:
-			print("gone")
-			return
-		elif t == 0:
+
+		if t == 0:
 			pass
+
 		elif t == 1:
 			if not merge:
 				qn.save(f"cut/{i}.png", "PNG")
@@ -64,19 +66,21 @@ def cli(qns, x, master, var):
 				to_merge = []
 				merge = False
 			i += 1
+
 		elif t == 2:
 			if not merge:
 				merge = True
-				print(f"Merge started at q{i}")
+				#print(f"Merge started at q{i}")
 			to_merge.append(qn)
 
 		elif t == 3:
 			para = True
 			if not merge:
 				merge = True
-				print(f"Para merging")
+				#print(f"Para merging")
 			to_merge.append(qn)
 			i += 1
+
 		elif t == 4:
 			if merge:
 				new = imgMerge(to_merge)
@@ -85,15 +89,9 @@ def cli(qns, x, master, var):
 				merge = False
 				i += 1
 
+	if merge:
+		new = imgMerge(to_merge)
+		new.save(f"cut/{i}.png", "PNG")
 	master.destroy()
 
-
-
-master = Tk()
-var = IntVar()
-
-im = img.open("sample2.png")
-r = work(im)
-
-cli(r, 1, master, var)
 
