@@ -47,7 +47,7 @@ def cli(qns, x, master, var):
 
 
 		# tkinter window
-		buttons(master, var, merge, qmerge, qcurr, qnext)
+		buttons(master, var, i, merge, qmerge, qcurr, qnext)
 
 		# if any button pressed, stop window and move to next part of code
 

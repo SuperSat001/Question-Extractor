@@ -9,11 +9,14 @@ def fn(x, master, var):
 		var.set(x)
 		#print("Button",x)
 		l = Label(master, text=f"Last {x}")
-		l.grid(row = 8, column = 0, pady = 5)
+		l.grid(row = 9, column = 0, pady = 5)
 	return f
 
 
-def buttons(master, var, merge, qmerge, qcurr, qnext=None):
+def buttons(master, var, qn, merge, qmerge, qcurr, qnext=None):
+	Label(master, text=f"No. {qn}").grid(row = 8, column = 0,
+       columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
 	nextLabel, nextPic, mergeLabel, mergePic, b3, b4 = None, None, None, None, None, None
 	if not merge:
 
