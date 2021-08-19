@@ -6,6 +6,7 @@ from tkinter.ttk import *
 from PIL import Image as img
 import os
 import shutil
+import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 path = os.path.join(dir_path, "cut")
@@ -31,10 +32,12 @@ def pics(name):
 master = Tk()
 master.title("Question Extractor")
 
+
+
 var = IntVar()
 
-#r = pics("testdata/sample2.png")
-r = pdfs("testdata/file.pdf")
+r = pics("testdata/sample2.png")
+#r = pdfs("2 (14).pdf")
 
 cli(r, 1, master, var)
 
