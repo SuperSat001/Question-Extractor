@@ -2,7 +2,7 @@
 
 Author - Delta0001#8468
 
-Code hosted on GitHub at [Question-Extracto](https://github.com/SuperSat001/Question-Extractor)
+Code hosted on GitHub at [Question-Extractor](https://github.com/SuperSat001/Question-Extractor)
 
 
 ## Usage Instructions
