@@ -36,7 +36,7 @@ On Line 38, the second arguement of `cli()` function is the first question numbe
 	- To skip `Current Question` but continue merging, `Current Merge` remains same.
 
 2. **Save End Merge**
-	- To save `Current Merge` and end `Current Merge`
+	- To save `Current Question` and end `Current Merge`. Closely related to 5.
 
 3. **Merge Same**
 	- When you want to merge `Current Question` to `Current Merge` but not change `Q No.`. Like suppose there is a paragraph from q1-4 and before q1 there is paragraph statement. So when paragraph statement is `Current Question` then you'll `Start Merge` and when `q1` is `Current Question` then you will use **this command** to merge statement and q1.
@@ -44,8 +44,8 @@ On Line 38, the second arguement of `cli()` function is the first question numbe
 4. **Merge Next**
 	- Continuing last example, after you have used `Start Merge` and `Merge Same`, your `Current Merge` is comprised of `statement-q1`. Now when q2 is `Current Question`, use **this command** to merge q2 with `Current Merge` and increase `Q No.`
 
-5. **Skip While Merging**. 
-	- To skip `Current Question` and save `Current Merge`. In the pervious example, after you have merged `statement-q1-q2-q3-q4` and next image has to be skipped, use this. Generally a new question does't directly start after a paragraph ends so after `q4` the `Current Question` (some blank line/title etc) will be skipped using this.
+5. **Skip End Merging**. 
+	- To skip `Current Question` and save `Current Merge`. In the pervious example, after you have merged `statement-q1-q2-q3-q4` and next image has to be skipped, use this. 
 
 ## Note
 - I know that `While Not Merging` command appears a bit complicated but after 2-3 uses you will be comfortable
