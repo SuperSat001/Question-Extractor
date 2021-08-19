@@ -7,6 +7,7 @@ from PIL import Image as img
 import os
 import shutil
 import sys
+from tkinter.filedialog import askopenfilename
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 path = os.path.join(dir_path, "cut")
@@ -29,15 +30,22 @@ def pics(name):
 	return work(im)
 
 
+
+
 master = Tk()
 master.title("Question Extractor")
-
-
+Label(master, text="Loading").grid(row=0, column=0, padx=10, pady=10)
+# master.withdraw()
+filename = askopenfilename(filetypes=[("Accepted", "*.pdf"), ("Accepted", "*.png")])
+print(filename)
+# master.deiconify()
 
 var = IntVar()
 
-r = pics("testdata/sample2.png")
-#r = pdfs("2 (14).pdf")
+if filename.endswith(".png"):
+	r = pics(filename)
+else:
+	r = pdfs(filename)
 
 cli(r, 1, master, var)
 
