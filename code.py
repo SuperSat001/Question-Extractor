@@ -3,6 +3,7 @@ from cli import cli
 from pdf2image import convert_from_path
 from tkinter import *
 from tkinter.ttk import *
+from PIL import Image as img
 import os
 import shutil
 
@@ -33,7 +34,7 @@ master.title("Question Extractor")
 var = IntVar()
 
 #r = pics("testdata/sample2.png")
-r = pdfs("testdata/file2.pdf")
+r = pdfs("testdata/file.pdf")
 
 cli(r, 1, master, var)
 
