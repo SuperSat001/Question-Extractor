@@ -1,5 +1,5 @@
-from module.functions import work
-from module.cli import cli
+from functions import work
+from cli import cli
 from pdf2image import convert_from_path
 from tkinter import *
 from tkinter.ttk import *
