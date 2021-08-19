@@ -1,9 +1,7 @@
 from PIL import Image as img
-import matplotlib.pyplot as plt
-from PIL import Image as img
 from PIL import ImageTk
-from display import *
-from functions import work
+from display import buttons
+from math import floor
 
 def imgMerge(images):
 	widths, heights = zip(*(i.size for i in images))

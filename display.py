@@ -1,8 +1,5 @@
 from tkinter import *
 from tkinter.ttk import *
-from PIL import Image as img
-from PIL import ImageTk
-from math import floor
 
 def fn(x, master, var):	
 	def f():
