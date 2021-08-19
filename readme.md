@@ -9,6 +9,7 @@ Code hosted on GitHub at [Question-Extractor](https://github.com/SuperSat001/Que
 
 - Open `code.py` and on Line 36, write the name of your file. 
 If file is a `.png` then `pics()` function can be used, if `.pdf` then `pdfs()`
+On Line 38, the second arguement of `cli()` function is the first question number of the file. Edit accordingly.
 
 - Run `code.py` (please prefer using an IDE over terminal here as windows terminal was sometimes not taking `Ctrl+C` while code was running)
 
@@ -50,6 +51,8 @@ If file is a `.png` then `pics()` function can be used, if `.pdf` then `pdfs()`
 - I know that `While Not Merging` command appears a bit complicated but after 2-3 uses you will be comfortable
 
 - `Last <x>` just keeps track of last button pressed.
+
+- `pdf2image` is a bit slow, suggest me new libraries.
 
 - Make sure the program successfully terminates in-case you close the `Tkinter` window in between. It's kinda wack.
 
