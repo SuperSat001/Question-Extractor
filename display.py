@@ -24,6 +24,14 @@ def buttons(master, var, qn, merge, qmerge, qcurr, qnext=None):
 	Button(master, text=f"Q Inc", command=qinc).grid(row = 9, column = 0,
        columnspan = 1, rowspan = 1, padx = 5, pady = 5)
 
+	def qdec():
+		temp.set(temp.get()-1)
+		Label(master, text=f"No. {temp.get()}").grid(row = 8, column = 0,
+       columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
+	Button(master, text=f"Q Dec", command=qdec).grid(row = 10, column = 0,
+       columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
 
 
 	nextLabel, nextPic, mergeLabel, mergePic, b3, b4 = None, None, None, None, None, None
