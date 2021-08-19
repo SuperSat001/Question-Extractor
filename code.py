@@ -33,7 +33,7 @@ master.title("Question Extractor")
 var = IntVar()
 
 #r = pics("testdata/sample2.png")
-r = pdfs("testdata/file.pdf")
+r = pdfs("testdata/file2.pdf")
 
 cli(r, 1, master, var)
 

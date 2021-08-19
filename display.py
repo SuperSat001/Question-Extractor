@@ -6,13 +6,25 @@ def fn(x, master, var):
 		var.set(x)
 		#print("Button",x)
 		l = Label(master, text=f"Last {x}")
-		l.grid(row = 9, column = 0, pady = 5)
+		l.grid(row = 10, column = 0, pady = 5)
 	return f
 
 
 def buttons(master, var, qn, merge, qmerge, qcurr, qnext=None):
+	temp = IntVar()
+	temp.set(qn)
 	Label(master, text=f"No. {qn}").grid(row = 8, column = 0,
        columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
+	def qinc():
+		temp.set(temp.get()+1)
+		Label(master, text=f"No. {temp.get()}").grid(row = 8, column = 0,
+       columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
+	Button(master, text=f"Q Inc", command=qinc).grid(row = 9, column = 0,
+       columnspan = 1, rowspan = 1, padx = 5, pady = 5)
+
+
 
 	nextLabel, nextPic, mergeLabel, mergePic, b3, b4 = None, None, None, None, None, None
 	if not merge:
@@ -85,7 +97,7 @@ def buttons(master, var, qn, merge, qmerge, qcurr, qnext=None):
 		except:
 			pass
 	
-	return
+	return temp.get()
 
 
 

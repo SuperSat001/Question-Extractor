@@ -47,7 +47,11 @@ On Line 38, the second arguement of `cli()` function is the first question numbe
 5. **Skip End Merging**. 
 	- To skip `Current Question` and save `Current Merge`. In the pervious example, after you have merged `statement-q1-q2-q3-q4` and next image has to be skipped, use this. 
 
+### Q Inc
+In case you need to change `Q No.` (note that it's the **next** question number to be saved), you can use `Q Inc`. Make sure that when you are saving multiple merged questions, `Q No.` is the last question number of the merged qns.
+
 ## Note
+
 - I know that `While Not Merging` command appears a bit complicated but after 2-3 uses you will be comfortable
 
 - `Last <x>` just keeps track of last button pressed.
