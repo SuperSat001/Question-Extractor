@@ -32,6 +32,8 @@ On Line 38, the second arguement of `cli()` function is the first question numbe
 
 ### While Not Merging
 
+Update - Now that you can manually set `Q No.` you can use 3rd command for both 3 and 4 and then change numbers manually, in case it's unclear when to use 3 and 4, use 3 and adjust.
+
 1. **Skip While Merging**. 
 	- To skip `Current Question` but continue merging, `Current Merge` remains same.
 
