@@ -7,13 +7,13 @@ Code hosted on GitHub at [Question-Extractor](https://github.com/SuperSat001/Que
 
 ## Usage Instructions
 
-- Open `code.py` and on Line 36, write the name of your file. 
-If file is a `.png` then `pics()` function can be used, if `.pdf` then `pdfs()`
-On Line 38, the second arguement of `cli()` function is the first question number of the file. Edit accordingly.
-
 - Run `code.py` (please prefer using an IDE over terminal here as windows terminal was sometimes not taking `Ctrl+C` while code was running)
 
-- Tkinter window will open. Main image is under `Current Question` on which operations below are going to be performed. 
+- Tkinter window will open. 
+
+First you'll get to select file. Both `.png` and `.pdf` are accepted.
+
+Main image is under `Current Question` on which operations below are going to be performed. 
 
 ## Commands
 
