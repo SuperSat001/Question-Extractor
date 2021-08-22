@@ -13,7 +13,9 @@ Code hosted on GitHub at [Question-Extractor](https://github.com/SuperSat001/Que
 
 - Tkinter window will open. 
 
-First you'll get to select file. Both `.png` and `.pdf` are accepted.
+First you will have to choose `saving location` for generated pictures.
+
+Then you'll get to select file. Both `.png` and `.pdf` are accepted.
 
 Main image is under `Current Question` on which operations below are going to be performed. 
 

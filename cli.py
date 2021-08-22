@@ -18,7 +18,7 @@ def imgMerge(images):
 
 	return new_im
 
-def cli(qns, x, master, var):
+def cli(qns, x, master, var, save_loc):
 	i = x
 	merge = False
 	to_merge = []
@@ -57,10 +57,10 @@ def cli(qns, x, master, var):
 
 		elif t == 1:
 			if not merge:
-				qn.save(f"cut/{i}.png", "PNG")
+				qn.save(f"{save_loc}/{i}.png", "PNG")
 			else:
 				new = imgMerge(to_merge)
-				new.save(f"cut/{i}.png", "PNG")
+				new.save(f"{save_loc}/{i}.png", "PNG")
 				to_merge = []
 				merge = False
 			i += 1
@@ -82,14 +82,14 @@ def cli(qns, x, master, var):
 		elif t == 4:
 			if merge:
 				new = imgMerge(to_merge)
-				new.save(f"cut/{i}.png", "PNG")
+				new.save(f"{save_loc}/{i}.png", "PNG")
 				to_merge = []
 				merge = False
 				i += 1
 
 	if merge:
 		new = imgMerge(to_merge)
-		new.save(f"cut/{i}.png", "PNG")
+		new.save(f"{save_loc}/{i}.png", "PNG")
 	master.destroy()
 
 

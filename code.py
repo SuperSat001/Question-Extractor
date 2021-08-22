@@ -1,6 +1,7 @@
 from functions import work
 from cli import cli
 from pdf2image import convert_from_path
+from tkinter import filedialog
 from tkinter import *
 from tkinter.ttk import *
 from PIL import Image as img
@@ -33,14 +34,17 @@ def pics(name):
 print("Code by Delta0001#1968")
 print("Hosted on GitHub @ SuperSat001/Question-Extractor")
 
-print("Please have a folder named \"cut\" in same directory as code")
 
 master = Tk()
 master.title("Question Extractor")
 Label(master, text="Loading").grid(row=0, column=0, padx=10, pady=10)
 # master.withdraw()
+
+save_loc = filedialog.askdirectory()
+print("Saving location:", save_loc)
+
 filename = askopenfilename(filetypes=[("Accepted", "*.pdf"), ("Accepted", "*.png")])
-print(filename)
+print("Selected file:", filename)
 # master.deiconify()
 
 var = IntVar()
@@ -50,7 +54,7 @@ if filename.endswith(".png"):
 else:
 	r = pdfs(filename)
 
-cli(r, 1, master, var)
+cli(r, 1, master, var, save_loc)
 
 
 
