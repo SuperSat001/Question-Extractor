@@ -9,14 +9,14 @@ import shutil
 import sys
 from tkinter.filedialog import askopenfilename
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-path = os.path.join(dir_path, "cut")
-try: 
-    os.mkdir(path)
-except FileExistsError:
-    print("Cut Deleted")
-    shutil.rmtree(path)
-    os.mkdir(path)
+# dir_path = os.path.dirname(os.path.realpath(__file__))
+# path = os.path.join(dir_path, "cut")
+# try: 
+#     os.mkdir(path)
+# except FileExistsError:
+#     print("Cut Deleted")
+#     shutil.rmtree(path)
+#     os.mkdir(path)
 
 def pdfs(name):
 	pages = convert_from_path(name, 200)
@@ -30,7 +30,10 @@ def pics(name):
 	return work(im)
 
 
+print("Code by Delta0001#1968")
+print("Hosted on GitHub @ SuperSat001/Question-Extractor")
 
+print("Please have a folder named \"cut\" in same directory as code")
 
 master = Tk()
 master.title("Question Extractor")
