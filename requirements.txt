@@ -1,6 +1,4 @@
-from pdf2image import convert_from_path
-from tkinter import *
-from tkinter.ttk import *
-import os
-import shutil
-from math import floor
+pip install tkinter
+pip install pdf2image
+pip install numpy
+pip install Pillow

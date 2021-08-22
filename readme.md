@@ -7,6 +7,8 @@ Code hosted on GitHub at [Question-Extractor](https://github.com/SuperSat001/Que
 
 ## Usage Instructions
 
+- Make sure that you have installed everything in `requirements.txt`. Please set-up `poppler` using [these](https://stackoverflow.com/a/53960829) instructions 
+
 - Run `code.py` (please prefer using an IDE over terminal here as windows terminal was sometimes not taking `Ctrl+C` while code was running)
 
 - Tkinter window will open. 
