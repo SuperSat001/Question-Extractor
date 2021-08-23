@@ -22,7 +22,8 @@ def cli(qns, x, master, var, save_loc):
 	i = x
 	merge = False
 	to_merge = []
-	for _q in range(len(qns)):
+	_q = 0
+	while _q < len(qns):
 		t = -1
 
 		qcurr = qns[_q]
@@ -63,7 +64,9 @@ def cli(qns, x, master, var, save_loc):
 				new.save(f"{save_loc}/{i}.png", "PNG")
 				to_merge = []
 				merge = False
+				_q -= 1
 			i += 1
+			
 
 		elif t == 2:
 			if not merge:
@@ -86,6 +89,9 @@ def cli(qns, x, master, var, save_loc):
 				to_merge = []
 				merge = False
 				i += 1
+		elif t == 5:
+			_q -= 2
+		_q += 1
 
 	if merge:
 		new = imgMerge(to_merge)

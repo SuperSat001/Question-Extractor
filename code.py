@@ -34,7 +34,7 @@ def pics(name):
 print("Code by Delta0001#1968")
 print("Hosted on GitHub @ SuperSat001/Question-Extractor")
 
-
+	
 master = Tk()
 master.title("Question Extractor")
 Label(master, text="Loading").grid(row=0, column=0, padx=10, pady=10)

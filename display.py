@@ -62,6 +62,9 @@ def buttons(master, var, qn, merge, qmerge, qcurr, qnext=None):
 		b4 = Button(master, text="Skip and End Merge", command=fn(4, master, var))
 		b4.grid(row = 2, column = 2, pady=5, padx=5, columnspan=1)
 
+	b5 = Button(master, text="Back", command=fn(5, master, var))
+	b5.grid(row = 0, column = 2, pady=5, padx=5, columnspan=1)
+
 	Label(master, text="Current Question").grid(row = 4, column = 0,
        columnspan = 4, rowspan = 1, padx = 5, pady = 5)
 
